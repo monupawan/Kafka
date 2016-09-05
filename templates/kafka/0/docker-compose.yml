@@ -1,0 +1,17 @@
+broker:
+  tty: true
+  restart: always
+  image: rawmind/alpine-kafka:0.10.0.0-2
+  environment:
+    - JVMFLAGS=-Xmx${kafka_mem}m -Xms${kafka_mem}m
+    - CONFD_INTERVAL=${kafka_interval}
+    - ZK_SERVICE=${zk_link}
+    - KAFKA_LOG_DIRS=${kafka_log_dir}
+    - KAFKA_LOG_RETENTION_HOURS=${kafka_log_retention}
+    - KAFKA_NUM_PARTITIONS=${kafka_num_partitions}
+    - ADVERTISE_PUB_IP=${kafka_pub_ip}
+  external_links:
+    - ${zk_link}:zk
+  labels: 
+    io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+    io.rancher.container.hostname_override: container_name
