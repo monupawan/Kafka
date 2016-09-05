@@ -1,0 +1,7 @@
+name: Apache Kafka Cluster
+description: |
+  Kafka cluster
+version: Kafka-0.10
+category: Clustering
+maintainer: "Pawan Kumar <monu.pawan@gmail.com>"
+minimum_rancher_version: v0.59.0
