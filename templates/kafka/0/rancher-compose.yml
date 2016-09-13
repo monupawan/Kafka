@@ -49,7 +49,7 @@
       required: false
       default: false 
       type: "boolean"
-    - variable: "zk_link"
+    - variable: "KAFKA_ZK_HOST"
       description: |
         Choose the Zookeeper service to use. 
         It's really recommended a dedicated zookeeper service just for Kafka.
