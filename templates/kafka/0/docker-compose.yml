@@ -1,7 +1,7 @@
 broker:
   tty: true
   image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/kafka:10.0.1
-  command: bash /opt/kafka/bin/kafka-service.sh
+  command: bash /opt/kafka/bin/kafka-service.sh restart
   volumes_from:
     - broker-volume
     - broker-conf
