@@ -16,12 +16,14 @@ broker:
   external_links:
     - ${zk_link}
   labels: 
+    io.rancher.container.dns: true
     io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
     io.rancher.container.hostname_override: container_name
     io.rancher.sidekicks: broker-volume, broker-conf
 broker-conf:
   net: none
   labels:
+    io.rancher.container.dns: true
     io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
     io.rancher.container.hostname_override: container_name
     io.rancher.container.start_once: true
@@ -29,6 +31,7 @@ broker-conf:
 broker-volume:
   net: none
   labels:
+    io.rancher.container.dns: true
     io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
     io.rancher.container.hostname_override: container_name
     io.rancher.container.start_once: true
