@@ -23,7 +23,7 @@
       description: "Broker volume to log data"
       label: "Broker log volume:"
       required: true
-      default: "/opt/kafka/logs"
+      default: "/usr/local/kafka/logs"
       type: "string"
     - variable: "kafka_log_retention"
       description: "Broker log retention in hours"
