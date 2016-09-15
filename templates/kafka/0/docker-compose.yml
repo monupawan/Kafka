@@ -24,17 +24,11 @@ broker:
 broker-conf:
   net: none
   labels:
-    io.rancher.container.dns: true
-    io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
-    io.rancher.container.hostname_override: container_name
     io.rancher.container.start_once: true
   image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/kafka:0.10.0.1
 broker-volume:
   net: none
   labels:
-    io.rancher.container.dns: true
-    io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
-    io.rancher.container.hostname_override: container_name
     io.rancher.container.start_once: true
   environment:
     - SERVICE_USER=kafka
