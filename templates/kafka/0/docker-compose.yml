@@ -19,6 +19,9 @@ broker:
   labels: 
     io.rancher.container.dns: true
     io.rancher.sidekicks: broker-volume, broker-conf
+    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+  volumes:
+   - /usr/local/aeris_lib/:/usr/local/aeris_lib
 broker-conf:
   net: none
   labels:
